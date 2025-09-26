@@ -46,6 +46,56 @@
       <button class="btn btn-primary">Contact Me</button>
       <button class="btn btn-success">My Skills</button>
     </div>
+  <!-- Modal Example -->
+<button type="button" class="btn btn-warning mt-3" data-bs-toggle="modal" data-bs-target="#infoModal">
+  More Info
+</button>
+<div class="modal fade" id="infoModal" tabindex="-1">
+  <div class="modal-dialog"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Study Info</h5></div>
+    <div class="modal-body">Extra info about your schedule, skills, etc.</div>
+  </div></div>
+</div>
+
+<!-- Carousel Example -->
+<div id="carouselExampleIndicators" class="carousel slide mt-4" data-bs-ride="carousel">
+  <div class="carousel-indicators" id="carouselIndicators"></div>
+  <div class="carousel-inner" id="carouselInner"></div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const response = await fetch("https://api.thecatapi.com/v1/images/search?limit=5");
+  const catImages = await response.json();
+
+  const carouselIndicators = document.getElementById("carouselIndicators");
+  const carouselInner = document.getElementById("carouselInner");
+
+  catImages.forEach((cat, index) => {
+    const indicator = document.createElement("button");
+    indicator.type = "button";
+    indicator.setAttribute("data-bs-target", "#carouselExampleIndicators");
+    indicator.setAttribute("data-bs-slide-to", index);
+    if (index === 0) { indicator.classList.add("active"); }
+    carouselIndicators.appendChild(indicator);
+
+    const carouselItem = document.createElement("div");
+    carouselItem.classList.add("carousel-item");
+    if (index === 0) { carouselItem.classList.add("active"); }
+    const img = document.createElement("img");
+    img.src = cat.url;
+    img.classList.add("d-block", "w-100");
+    carouselItem.appendChild(img);
+    carouselInner.appendChild(carouselItem);
+  });
+});
+</script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
