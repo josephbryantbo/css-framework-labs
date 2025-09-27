@@ -1,0 +1,9 @@
+/* style.css for Task 7 */
+body {
+  background: #f8fafc;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  text-align: center;
+  padding: 60px 20px;
+}
+h1 { color: #0ea5e9; margin-bottom: 12px; }
+p  { color: #334155; }
