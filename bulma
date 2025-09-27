@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Favorite Food</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">🍕 Pizza Lover</h1>
+      <p class="subtitle">Pizza is my go-to comfort food!</p>
+      <button class="button is-danger">Order Now</button>
+
+      <div class="card mt-4">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="https://via.placeholder.com/300x200" alt="Pizza">
+          </figure>
+        </div>
+        <div class="card-content">Crispy crust, gooey cheese, endless toppings.</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
